@@ -1,0 +1,19 @@
+Alice Johnson
+Senior Software Engineer
+
+Summary:
+Backend-focused software engineer with 6 years of experience building scalable
+web applications and APIs.
+
+Skills:
+Python, Django, Flask, PostgreSQL, MySQL, Docker, Kubernetes, AWS, Git, React,
+Agile/Scrum, CI/CD pipelines, team leadership, mentoring junior engineers.
+
+Experience:
+Senior Backend Engineer, TechCorp (2020-Present)
+- Led design of REST APIs serving 2M+ daily requests using Django and PostgreSQL.
+- Migrated infrastructure to Docker/Kubernetes on AWS, improving deployment speed.
+- Mentored 3 junior engineers and ran sprint planning in an Agile environment.
+
+Backend Developer, DataSoft (2018-2020)
+- Built internal tools with Python and Flask, integrated CI/CD with Jenkins.

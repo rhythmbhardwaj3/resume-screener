@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Screening Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- grunge texture filter used by ink stamps -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="stampTexture" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise" seed="7"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+    <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.9 0"/>
+  </filter>
+</svg>
+
+<div class="desk">
+
+  <header class="desk-header">
+    <p class="eyebrow">CASE FILE NO. 001 &mdash; INTAKE DESK</p>
+    <h1 class="title">Resume Screening Desk</h1>
+    <p class="subtitle">Drop a job description and a stack of resumes. Every candidate gets pulled, scored, and stamped &mdash; skill match, keyword match, and years on file.</p>
+  </header>
+
+  <main class="folders">
+
+    <section class="folder" id="jdFolder">
+      <div class="folder-tab">JOB DESCRIPTION</div>
+      <div class="folder-body">
+        <div class="input-toggle">
+          <button type="button" class="toggle-btn active" data-mode="paste">Paste text</button>
+          <button type="button" class="toggle-btn" data-mode="file">Upload file</button>
+        </div>
+
+        <textarea id="jdText" class="jd-textarea" placeholder="Paste the job description here&#10;&#10;e.g. Senior Backend Developer &mdash; 5+ years, Python, Django, AWS..."></textarea>
+
+        <div id="jdDropzone" class="dropzone hidden" tabindex="0">
+          <div class="dropzone-icon">&#128196;</div>
+          <p><strong>Drop job description</strong> or click to browse</p>
+          <p class="dropzone-hint">.pdf &middot; .docx &middot; .txt</p>
+          <input type="file" id="jdFileInput" accept=".pdf,.docx,.txt" hidden>
+        </div>
+        <div id="jdFileName" class="file-chip hidden"></div>
+      </div>
+    </section>
+
+    <section class="folder" id="resumeFolder">
+      <div class="folder-tab">CANDIDATE STACK</div>
+      <div class="folder-body">
+        <div id="resumeDropzone" class="dropzone" tabindex="0">
+          <div class="dropzone-icon">&#128203;</div>
+          <p><strong>Drop resumes here</strong> or click to browse</p>
+          <p class="dropzone-hint">.pdf &middot; .docx &middot; .txt &middot; multiple files OK</p>
+          <input type="file" id="resumeFileInput" accept=".pdf,.docx,.txt" multiple hidden>
+        </div>
+        <ul id="resumeList" class="resume-list"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="weights-row">
+    <details class="weights-details">
+      <summary>Adjust scoring weights</summary>
+      <div class="weight-sliders">
+        <label>Skill match <span id="skillWVal">50%</span>
+          <input type="range" id="skillW" min="0" max="100" value="50">
+        </label>
+        <label>Keyword match <span id="keywordWVal">35%</span>
+          <input type="range" id="keywordW" min="0" max="100" value="35">
+        </label>
+        <label>Experience <span id="expWVal">15%</span>
+          <input type="range" id="expW" min="0" max="100" value="15">
+        </label>
+      </div>
+    </details>
+  </div>
+
+  <div class="submit-row">
+    <button id="screenBtn" class="stamp-button">
+      <span class="stamp-button-label">SCREEN&nbsp;CANDIDATES</span>
+    </button>
+    <p id="errorMsg" class="error-msg hidden"></p>
+  </div>
+
+  <section id="resultsSection" class="results-section hidden">
+    <div class="results-header">
+      <h2>Case Results</h2>
+      <button id="downloadCsv" class="ghost-button">Download report (.csv)</button>
+    </div>
+    <div id="resultsList" class="results-list"></div>
+  </section>
+
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loading-stamp">PROCESSING</div>
+    <p class="loading-text">Reading files, matching skills, running the numbers&hellip;</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

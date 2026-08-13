@@ -1,0 +1,23 @@
+Senior Backend Developer
+
+We are hiring a Senior Backend Developer with 5+ years of experience to join our
+growing engineering team.
+
+Required Skills:
+- Strong proficiency in Python and Django
+- Experience with REST API design
+- PostgreSQL and database optimization
+- Docker and containerized deployments
+- AWS cloud infrastructure
+- Git version control
+- Agile/Scrum development experience
+
+Preferred Skills:
+- React for front-end collaboration
+- Kubernetes orchestration
+- CI/CD pipeline experience
+- Strong communication and leadership skills
+- Experience mentoring junior developers
+
+Responsibilities include designing scalable backend services, collaborating with
+cross-functional teams, and improving system reliability and performance.
